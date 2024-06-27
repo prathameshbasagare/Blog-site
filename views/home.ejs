@@ -11,12 +11,17 @@
 <% } %> -->
 
 <% posts.forEach((element)=>{ %>
-    <h2> <%= element.title %> </h2>
-    <p> 
-        <%= element.content.substring(0,100)+" ..." %> 
-        <a href= "posts/+<%=element.title %>">Read More</a> 
-    </p>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= element.title %></h3>
+        </div>
+        <div class="panel-body">
+            <%= element.content.substring(0,100)+" ..." %> 
+            <a href= "posts/<%=element._id %>">Read More</a>
+        </div>
+    </div>
 <% }); %>
+
 
 
 <%- include("partials/footer")-%>
